@@ -1,0 +1,11 @@
+2022-06-19 11:50:19,896 ERROR    Processes plugin raised an exception.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/landscape/sysinfo/sysinfo.py", line 99, in run
+    result = plugin.run()
+  File "/usr/lib/python3/dist-packages/landscape/sysinfo/processes.py", line 17, in run
+    info = ProcessInformation(proc_dir=self._proc_dir)
+  File "/usr/lib/python3/dist-packages/landscape/lib/process.py", line 29, in __init__
+    self._jiffies_per_sec = jiffies or detect_jiffies()
+  File "/usr/lib/python3/dist-packages/landscape/lib/jiffies.py", line 32, in detect_jiffies
+    stat_file = open("/proc/%d/stat" % pid)
+FileNotFoundError: [Errno 2] No such file or directory: '/proc/54/stat'
